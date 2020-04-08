@@ -171,7 +171,8 @@ function login(k) {
   $(".chat-item:not(.new)").remove();
   $("#my-identicon").empty();
   $("#my-identicon").append(myIdenticon);
-  $(".user-info").off().on('click', showSettings);
+  $(".active-account").off().on('click', showSettings);
+  $("#show-accounts").off().on('click', () => {console.log('show accounts view')});
   $(".profile-link").attr('href', getUserChatLink(key.pub)).off().on('click', e => {
     e.preventDefault();
     if (chats[key.pub]) {
